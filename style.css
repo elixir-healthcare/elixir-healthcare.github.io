@@ -1,0 +1,149 @@
+/* Base/Layout */
+
+body {
+    background-image: url(images/bg-pattern.svg);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-color: #f1f1f1;
+    display: grid;
+        grid-template-rows: auto 1fr;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(16px, 1.25vmin, 22px);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+    transition: all .2s ease;
+}
+
+*:focus-visible {
+    outline: 2px solid #6042BC;
+    outline-offset: .25rem;
+}
+
+header {
+    display: flex;
+        justify-content: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+header img {
+    width: 15rem;
+}
+
+main {
+    display: grid;
+        grid-template-rows: 1fr auto;
+        gap: 2rem;
+}
+
+
+
+/* Typography */
+
+h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: clamp(2.3rem, 5vmin, 8rem);
+    line-height: 1.3;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: clamp(1.2rem, 2vmin, 2rem);
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: clamp(1rem, 2vmin, 2rem);
+}
+
+h2 + p {
+    margin: 0;
+}
+
+.intro {
+    font-size: clamp(1.2rem, 2vmin, 2rem);
+}
+
+a {
+    color: #6042BC;
+    font-weight: 400;
+    text-decoration-color: #9B74E8;
+    text-decoration-thickness: 2px;
+}
+
+a:hover,
+a:active,
+a:focus {
+    text-decoration-thickness: 4px;
+}
+
+
+
+/* Components */
+
+.actions {
+    display: grid;
+        grid-template-columns: 1fr 1fr 1fr .7fr;
+        align-items: stretch;
+}
+
+@media screen and (max-width: 850px) {
+    .actions {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+.actions div {
+    border: 1px solid lightgray;
+    display: inline-flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: space-between;
+    padding: clamp(1.5rem, 1.5vmin, 2rem);
+    padding-bottom: clamp(2rem, 2vmin, 3rem);
+}
+
+.content {
+    background: radial-gradient(#f1f1f1, transparent);
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    max-width: 1600px;
+    padding: 0 clamp(2rem, 4vmin, 4rem);
+    width: 80vw;
+}
+
+@media screen and (max-width: 500px) {
+    .content {
+        width: 100%;
+    }
+}
+
+a.button {
+    background-color: #2C1760;
+    border-radius: 4px;
+    color: white;
+    font-weight: 400;
+    padding: .5rem 1rem;
+    text-decoration: none;
+}
+
+a.button:hover,
+a.button:active,
+a.button:focus {
+    background-color: #6042BC;
+}
+
+a.button::after {
+    content: " →";
+}
